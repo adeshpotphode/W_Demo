@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Manage Clients</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/projects.css}"> <!-- or respective -->
+
+</head>
+
+<body>
+    <h1>Add Client</h1>
+    <form th:action="@{/admin/clients}" method="post">
+        <input type="text" name="name" placeholder="Client Name" required>
+        <input type="text" name="description" placeholder="Description" required>
+        <input type="text" name="designation" placeholder="Designation" required>
+        <input type="text" name="imageUrl" placeholder="Image URL" required>
+        <button type="submit">Save</button>
+    </form>
+    <h2>All Clients</h2>
+    <div th:each="c : ${clients}">
+        <h3 th:text="${c.name}"></h3>
+        <p th:text="${c.designation}"></p>
+        <p th:text="${c.description}"></p>
+        <img th:src="${c.imageUrl}" width="150">
+    </div>
+</body>
+
+</html>

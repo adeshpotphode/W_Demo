@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>My Landing Page</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/projects.css}"> <!-- or respective -->
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <div class="header">
+        <img src="/images/Images/logo.svg" alt="image not found">
+        <nav>
+          <ul>
+            <li><a href="home">Home</a></li>
+            <li><a href="Services">Service</a></li>
+            <li><a href="projects">Projects</a></li>
+            <li><a href="Testimonials">Testimonials</a></li>
+            <li><a href="Contact" class="contact-btn">Contact</a></li>
+          </ul>
+        </nav>
+    </div>
+
+
+    <div class="hero-section">
+    <div class="hero-content">
+      <h1>Consultation,<br>Design <br> & Marketing</h1>
+    </div>
+    <div class="form-box">
+      <h2>Get a Free Consultation</h2>
+      <form th:action="@{/contact}" method="post">
+        <input type="text" name="fullName" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="text" name="mobile" placeholder="Mobile Number" required>
+        <input type="text" name="city" placeholder="City" required>
+        <button type="submit">Get Quick Quote</button>
+      </form>
+    </div>
+  </div>
+
+<!-- <h2>Contact Us</h2>
+    <form th:action="@{/contact}" method="post">
+        <input type="text" name="fullName" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="text" name="mobile" placeholder="Mobile Number" required>
+        <input type="text" name="city" placeholder="City" required>
+        <button type="submit">Submit</button>
+    </form> -->
+
+
+
+
+
+    <section class="intro-section">
+        <div class="intro-text">
+          <h2>Not Your Average Realtor</h2>
+          <p>Most realtors focus only on the buying process. We focus on potential return, marketing design, and what’s really going to help get the home you love or sell with a return.</p>
+        </div>
+        <div class="intro-images">
+          <img src="/images/Images/Ellipse 11.svg" alt="Main Image" class="image-main">
+          <img src="/images/Images/Ellipse 12.svg" alt="Image Top Right" class="image-circle image-top">
+          <img src="/images/Images/Ellipse 13.svg" alt="Image Bottom Right" class="image-circle image-bottom">
+        </div>
+   </section>
+
+
+     <!-- Features Section -->
+  <section class="features-section">
+    <h2 class="features-title">Why Choose Us?</h2>
+    <img src="/images/shapes/Rectangle 58.svg" alt="image not found">
+    <div class="features-grid">
+      <div class="feature-item">
+        <img src="/images/Icons/circle-dollar-sign.svg" alt="image not found">
+        <h3>Potential ROI</h3>
+        <p>We’ll help you understand the potential return of your home before you buy or sell. Let’s get you the best value possible.</p>
+      </div>
+      <div class="feature-item">
+        <img src="/images/Icons/home.svg" alt="image not found">
+        <h3>Design</h3>
+        <p>From staging to custom design and remodeling guidance, we help your design pop and appeal to today's buyer.</p>
+      </div>
+      <div class="feature-item">
+        <img src="/images/Icons/paintbrush-2.svg" alt="image not found">
+        <h3>Marketing</h3>
+        <p>We don’t just market your home. We create an experience. From high-end media to a strategic marketing plan.</p>
+      </div>
+    </div>
+  </section>
+
+
+   <section class="client-showcase">
+       <div class="decor decor-circle decor1"></div>
+       <div class="decor decor-square decor2"></div>
+       <!-- <div class="decor decor-corner decor3"></div> -->
+     
+       <div class="client-grid">
+         <img src="/images/Images/pexels-brett-sayles-2881232.svg" alt="Client 1">
+         <img src="/images/Images/pexels-andres-ayrton-6578391.svg" alt="Client 2">
+         <img src="/images/Images/pexels-fauxels-3182834.svg" alt="Client 3">
+       </div>
+   </section>
+
+
+   <section class="about-us">
+        <h2>About Us</h2>
+        <p>
+          With years of experience in the real estate industry, excellent customer service, and a commitment to work from the heart of client’s needs, 
+          we provide quality service to build relationships with clients and, more importantly, maintain those relationships by communicating effectively.
+        </p>
+        <a href="#" class="btn-learn">Learn More</a>
+    </section>
+
+
+
+    <section class="our-projects">
+        <h2>Our Projects</h2>
+        <p class="subtitle">
+          We know what buyers are looking for and suggest projects that will bring clients top dollar for the sale of their homes.
+        </p>
+        
+        <div class="project-grid">
+          <div class="project-card" th:each="p : ${projects}">
+            <img th:src="${p.imageUrl}" alt="Project Image">
+            <h3 th:text="${p.name}">Project Name</h3>
+            <p th:text="${p.description}">Short Description</p>
+            <button class="read-more-btn">Read More</button>
+          </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+   
+    <!-- <section>
+        <h2>Our Projects</h2>
+        <div th:each="p : ${projects}">
+            <img th:src="${p.imageUrl}" width="150">
+            <h3 th:text="${p.name}"></h3>
+            <p th:text="${p.description}"></p>
+            <button>Read More</button>
+        </div>
+    </section> -->
+
+
+    <section class="admin-client-cards">
+      <h2>All Clients</h2>
+    
+      <div class="client-card-grid">
+        <div class="client-card" th:each="c : ${clients}">
+          <img th:src="${c.imageUrl}" alt="Client Photo" class="client-image" />
+          <p class="client-description" th:text="${c.description}">Description here...</p>
+          <h3 class="client-name" th:text="${c.name}">Client Name</h3>
+          <p class="client-designation" th:text="${c.designation}">Designation</p>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="cta-section">
+      <div class="cta-content">
+        <p>Learn more about our listing process, as well as our additional staging and design work.</p>
+        <a href="#" class="cta-button">Learn More</a>
+      </div>
+    </section>
+
+
+
+    
+    
+
+     <!-- <h2>All Clients</h2>
+    <div th:each="c : ${clients}">
+        <h3 th:text="${c.name}"></h3>
+        <p th:text="${c.designation}"></p>
+        <p th:text="${c.description}"></p>
+        <img th:src="${c.imageUrl}" width="150">
+    </div> -->
+    <!-- <div class="uper-footer">
+        <div class="header-name">
+            <nav>
+              <ul>
+                <li><a href="home">Home</a></li>
+                <li><a href="Services">Service</a></li>
+                <li><a href="projects">Projects</a></li>
+                <li><a href="Testimonials">Testimonials</a></li>
+                <li><a href="Contact">Contact</a></li>
+              </ul>
+            </nav>
+        </div>
+        <div class="Newsletter">
+            <form th:action="@{/subscribe}" method="post">
+                <input type="email" name="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div> -->
+    <div class="uper-footer">
+  <div class="header-name">
+    <nav>
+      <ul>
+        <li><a href="home">Home</a></li>
+        <li><a href="Services">Service</a></li>
+        <li><a href="projects">Projects</a></li>
+        <li><a href="Testimonials">Testimonials</a></li>
+        <li><a href="Contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="newsletter">
+    <form th:action="@{/subscribe}" method="post">
+      <input type="email" name="email" placeholder="Enter your email" required />
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</div>
+
+
+<footer class="main-footer">
+  <div class="footer-left">
+    <p>&copy; 2025 YourWebsite</p>
+  </div>
+
+  <div class="footer-center">
+    <p><i class="fa fa-home"></i> Real Trust</p>
+  </div>
+
+  <div class="footer-right">
+    <img src="/images/Icons/Frame.svg" alt="">
+    <img src="/src/main/resources/static/images/Images/Icons/Linkedin.svg" alt="">
+    <img src="/images/Icons/Group.svg" alt="">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+</footer>
+
+</body>
+
+</html>

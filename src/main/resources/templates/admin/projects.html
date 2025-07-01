@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Manage Projects</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/projects.css}"> <!-- or respective -->
+
+</head>
+
+<body>
+    <h1>Add New Project</h1>
+    <form th:action="@{/admin/projects}" method="post">
+        <input type="text" name="name" placeholder="Project Name" required>
+        <input type="text" name="description" placeholder="Description" required>
+        <input type="text" name="imageUrl" placeholder="Image URL" required>
+        <button type="submit">Save</button>
+    </form>
+
+    <h2>All Projects</h2>
+    <div th:each="proj : ${projects}">
+        <p><b th:text="${proj.name}"></b></p>
+        <p th:text="${proj.description}"></p>
+        <img th:src="${proj.imageUrl}" width="200" />
+        <hr>
+    </div>
+</body>
+
+</html>

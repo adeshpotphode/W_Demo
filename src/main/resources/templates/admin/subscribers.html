@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Subscribers</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/projects.css}"> <!-- or respective -->
+
+</head>
+
+<body>
+    <h1>Newsletter Subscribers</h1>
+    <ul>
+        <li th:each="s : ${subscribers}" th:text="${s.email}"></li>
+    </ul>
+</body>
+
+</html>

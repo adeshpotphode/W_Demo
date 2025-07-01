@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/projects.css}"> <!-- or respective -->
+
+</head>
+
+<body>
+    <h1>Admin Panel</h1>
+    <ul>
+        <li><a th:href="@{/admin/projects}">Manage Projects</a></li>
+        <li><a th:href="@{/admin/clients}">Manage Clients</a></li>
+        <li><a th:href="@{/admin/contacts}">View Contacts</a></li>
+        <li><a th:href="@{/admin/subscribers}">View Subscribers</a></li>
+    </ul>
+</body>
+
+</html>
