@@ -1,85 +1,169 @@
-Full Stack Application - Landing Page and Admin Panel
-Project Overview
-This is a full-stack application developed using Spring Boot for the backend, Thymeleaf as the templating engine, and MySQL for the database. The project has a landing page and an admin panel to manage project, client, contact form details, and newsletter subscriptions.
+Full Stack Development Project - Description Document
 
-The application is deployed on Render with PostgreSQL as the database.
+Project Overview:
 
-Features Implemented:
-Landing Page:
-Our Projects Section: Displays all the projects fetched from the backend, showing the image, name, description, and a non-functional "Read More" button.
+This is a full-stack application developed using Spring Boot for the backend, Thymeleaf as the templating engine, and MySQL for the database. The project has a landing page and an admin panel to manage projects, clients, contact form details, and newsletter subscriptions.
 
-Happy Clients Section: Displays all the clients with their image, description, name, and designation.
-
-Contact Form: Users can submit their details (Full Name, Email, Mobile Number, and City) through the contact form, which is stored in the database.
-
-Newsletter Subscription: Users can subscribe to the newsletter by entering their email, which is then stored in the backend.
-
-Admin Panel:
-Project Management: Admin can add projects, including image, name, and description.
-
-Client Management: Admin can add client details such as image, name, description, and designation.
-
-Contact Form Details: Admin can view all the submitted contact form responses.
-
-Subscribed Email Addresses: Admin can view all the email addresses subscribed to the newsletter.
+The application is deployed on Render with PostgreSQL as the cloud database.
 
 Tech Stack:
-Frontend: HTML, CSS, Thymeleaf
 
-Backend: Spring Boot
+Frontend: HTML, CSS, JavaScript, Thymeleaf
 
-Database: MySQL (Primary), PostgreSQL (Added for bonus points)
+Backend: Spring Boot (Java)
+
+Database: MySQL (Primary), PostgreSQL (Cloud)
 
 Deployment: Render (Cloud Hosting)
 
-Requirements:
-Before running the project, ensure you have the following installed on your system:
+Version Control: GitHub (Do not use the name "Flipr" in repo/code)
 
-Java 11+ for Spring Boot
+Features Implemented
 
-MySQL (or any relational database) installed and configured
+1. Landing Page
 
-Maven for building the project
+• Our Projects Section
 
-Git for version control
+Displays all the projects fetched from the backend
 
-Render account for deployment
+Fields:
 
-Getting Started:
+Project Image
+
+Project Name
+
+Project Description
+
+Dummy "Read More" button (non-functional)
+
+• Happy Clients Section
+
+Displays all the clients with:
+
+Client Image
+
+Description
+
+Name
+
+Designation
+
+• Contact Form
+
+Users can submit their details:
+
+Full Name
+
+Email Address
+̶- Mobile Number
+
+City
+
+Details are saved to the database and viewable in the admin panel
+
+• Newsletter Subscription
+
+Users can subscribe to newsletter
+
+Email address gets stored in the backend
+
+2. Admin Panel
+
+• Project Management
+
+Admin can add new projects
+
+Fields:
+
+Project Image
+
+Name
+
+Description
+
+• Client Management
+
+Admin can add client details:
+
+Client Image
+
+Name
+
+Description
+
+Designation
+
+• Contact Form Details
+
+Admin can view all submitted responses:
+
+Full Name
+
+Email
+
+Mobile
+
+City
+
+• Subscribed Email Addresses
+
+Admin can view all email subscribers
+
+Bonus Feature (In Progress)
+
+• Image Cropping
+
+Crop uploaded images to 450x350 resolution before saving (currently not implemented)
+
+Getting Started
+
 1. Clone the Repository
-Clone this repository to your local machine:
 
-bash
-Copy
-Edit
 git clone <your-repo-url>
-cd <project-directory>
-2. Configure Database:
-Set up your MySQL or PostgreSQL database and create a schema for the application.
+cd <your-project-folder>
 
-Configure the database in src/main/resources/application.properties:
-
-properties
-Copy
-Edit
+2. Configure the Database
+Create a MySQL or PostgreSQL schema and configure the connection in src/main/resources/application.properties:
 spring.datasource.url=jdbc:mysql://localhost:3306/your_database_name
 spring.datasource.username=your_username
 spring.datasource.password=your_password
-3. Build the Application:
-Run the following Maven command to build the project:
 
-bash
-Copy
-Edit
+3. Build the Application
 mvn clean install
-4. Run the Application:
-Run the application using:
 
-bash
-Copy
-Edit
+4. Run the Application
 mvn spring-boot:run
-The application will be available at http://localhost:8080.
 
-Features in Progress:
-Image Cropping: The functionality to crop images in a specific ratio before storing them in the backend is currently not implemented for bonus points.
+App will be available at: http://localhost:8080
+
+Deployment Guidelines:
+
+Deploy both frontend and backend on any cloud platform (Render, Heroku, AWS, etc.)
+
+Database: PostgreSQL preferred for cloud, MySQL for local development
+
+Evaluation Criteria:
+
+All required features implemented and functional
+
+Clean and modular code
+
+UI/UX as per reference image
+
+Easy navigation and user-friendly admin panel
+
+Submission Instructions:
+
+Upload the code on GitHub/GitLab/Bitbucket (public access)
+
+Do not use "Flipr" in repository name or comments
+
+Share the repository link
+
+Ensure all files are accessible publicly
+
+Prepared By:
+
+Adesh PotphodeContact No: 7223980089Date: 1 July 2025
+
+
